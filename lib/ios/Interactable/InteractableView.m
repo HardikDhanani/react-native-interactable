@@ -339,6 +339,11 @@ RCT_NOT_IMPLEMENTED(- (instancetype)init)
         }
         
     }
+    
+    if (pan.state == UIGestureRecognizerStateChanged)
+    {
+        [self reportDragEvent:@"changed"];
+    }
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)pan
